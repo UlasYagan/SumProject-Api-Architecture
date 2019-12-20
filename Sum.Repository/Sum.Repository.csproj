@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sum.Domain\Sum.Domain.csproj" />
+    <ProjectReference Include="..\Sum.Model\Sum.Model.csproj" />
+  </ItemGroup>
+
+</Project>

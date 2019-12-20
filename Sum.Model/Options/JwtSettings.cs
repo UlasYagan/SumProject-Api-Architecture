@@ -1,0 +1,10 @@
+﻿using System;
+
+namespace Sum.Model.Options
+{
+    public class JwtSettings
+    {
+        public string Secret { get; set; }
+        public TimeSpan TokenLifetime { get; set; }
+    }
+}
