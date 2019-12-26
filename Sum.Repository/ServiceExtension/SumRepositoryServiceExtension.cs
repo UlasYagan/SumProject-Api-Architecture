@@ -14,6 +14,9 @@ namespace Sum.Repository.ServiceExtension
             services.AddTransient<IBaseCrudRepository<Products, int>, ProductRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
 
+            services.AddTransient<IBaseCrudRepository<Suppliers, int>, SupplierRepository>();
+            services.AddTransient<IBaseCrudRepository<Categories, int>, CategoryRepository>();
+
         }
     }
 }   

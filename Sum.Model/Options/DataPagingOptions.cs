@@ -4,8 +4,8 @@
     {
         public DataPagingOptions(int? pageSize, int? pageNumber)
         {
-            PageSize = pageSize;
-            PageNumber = pageNumber;
+            PageSize = pageSize ?? 10;
+            PageNumber = pageNumber ?? 1;
         }
 
         public int? PageSize { get; set; }

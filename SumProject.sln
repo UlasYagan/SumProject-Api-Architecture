@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Api", "Sum.Api\Sum.Api.csproj", "{9CD6ED76-0233-47EB-8A1B-1B97BC3323EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Api", "Sum.Api\Sum.Api.csproj", "{9CD6ED76-0233-47EB-8A1B-1B97BC3323EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Model", "Sum.Model\Sum.Model.csproj", "{F6FC7807-984A-4234-8B24-65CE30E43313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Model", "Sum.Model\Sum.Model.csproj", "{F6FC7807-984A-4234-8B24-65CE30E43313}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Domain", "Sum.Domain\Sum.Domain.csproj", "{8297D146-024E-4BBB-A98B-34B311666BEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Domain", "Sum.Domain\Sum.Domain.csproj", "{8297D146-024E-4BBB-A98B-34B311666BEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Repository", "Sum.Repository\Sum.Repository.csproj", "{3014F403-9D66-4C52-9929-5F3E36F15549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Repository", "Sum.Repository\Sum.Repository.csproj", "{3014F403-9D66-4C52-9929-5F3E36F15549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Service", "Sum.Service\Sum.Service.csproj", "{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Service", "Sum.Service\Sum.Service.csproj", "{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

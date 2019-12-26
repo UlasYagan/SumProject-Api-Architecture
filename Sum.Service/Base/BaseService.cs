@@ -10,7 +10,7 @@ namespace Sum.Service.Base
     {
         protected readonly IBaseCrudRepository<T, IdType> _repository;
 
-        protected BaseService(IBaseCrudRepository<T, IdType> repository)
+        public BaseService(IBaseCrudRepository<T, IdType> repository)
         {
             _repository = repository;
         }
