@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Sum.Domain.Entity;
+using Sum.Domain.Entities;
 using Sum.Model.Feature;
 
 namespace Sum.Api.ServiceExtension
@@ -21,15 +20,15 @@ namespace Sum.Api.ServiceExtension
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddAuthentication("ApplicationCookie").AddCookie("ApplicationCookie", options =>
-            {
-                options.LoginPath = "/Auth/Login";
-                options.LogoutPath = "/Auth/Logout";
-                options.ExpireTimeSpan = TimeSpan.FromDays(5);
-                options.SlidingExpiration = true;
-                options.ReturnUrlParameter = "ReturnUrl";
-            });
-            services.AddAuthorization();
+            //services.AddAuthentication("ApplicationCookie").AddCookie("ApplicationCookie", options =>
+            //{
+            //    options.LoginPath = "/Auth/Login";
+            //    options.LogoutPath = "/Auth/Logout";
+            //    options.ExpireTimeSpan = TimeSpan.FromDays(5);
+            //    options.SlidingExpiration = true;
+            //    options.ReturnUrlParameter = "ReturnUrl";
+            //});
+            //services.AddAuthorization();
         }
     }
 }

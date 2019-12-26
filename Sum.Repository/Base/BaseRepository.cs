@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Sum.Domain.Entity;
+using Sum.Domain.Entities;
 using Sum.Model.Options;
 
 namespace Sum.Repository.Base

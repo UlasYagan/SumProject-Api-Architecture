@@ -1,4 +1,4 @@
-﻿using Sum.Domain.Entity;
+﻿using Sum.Domain.Entities;
 using Sum.Repository.Base;
 using Sum.Repository.Interface;
 using Sum.Service.Base;
