@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using Sum.Domain.Entities;
 using Sum.Model.Feature;
 
@@ -19,6 +20,10 @@ namespace Sum.Api.ServiceExtension
             services.Configure<FileUpload>(configuration.GetSection(nameof(FileUpload)));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddSwaggerGen(option => { option.SwaggerDoc("v1", new OpenApiInfo { Title = "Sum Project", Version = "v1" }); });
+
+
 
             //services.AddAuthentication("ApplicationCookie").AddCookie("ApplicationCookie", options =>
             //{
