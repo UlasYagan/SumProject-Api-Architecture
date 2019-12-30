@@ -38,6 +38,8 @@ namespace Sum.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+
             var swaggerOptions = new SwaggerOptions();
             Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
 

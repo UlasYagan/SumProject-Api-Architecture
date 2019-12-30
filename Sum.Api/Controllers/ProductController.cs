@@ -61,7 +61,7 @@ namespace Sum.Api.Controllers
             }
         }
 
-        [HttpPost(nameof(ProductUpdate))]
+        [HttpPut(nameof(ProductUpdate))]
         public ActionResult<SumResultModel<ProductDto>> ProductUpdate([FromBody] ProductDto entity)
         {
             try
