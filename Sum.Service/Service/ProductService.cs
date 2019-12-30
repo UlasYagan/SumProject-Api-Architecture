@@ -12,7 +12,7 @@ using System.Linq.Expressions;
 
 namespace Sum.Service.Service
 {
-    public class ProductService : BaseService<Products, int>, IProductRepository, IProductService
+    public class ProductService : BaseService<Products, int>, IProductService
     {
         private readonly IBaseCrudRepository<Suppliers, int> _baseCrudSupplierRepository;
         private readonly IBaseCrudRepository<Categories, int> _baseCrudCategoryRepository;

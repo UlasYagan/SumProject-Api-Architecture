@@ -11,6 +11,9 @@ namespace Sum.Repository.ServiceExtension
     {
         public static void AddInjectionForSumRepositories(this IServiceCollection services)
         {
+            services.AddTransient<IBaseCrudRepository<Users, Guid>, UserRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
             services.AddTransient<IBaseCrudRepository<Products, int>, ProductRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
 

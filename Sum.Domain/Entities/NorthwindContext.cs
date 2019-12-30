@@ -44,6 +44,7 @@ namespace Sum.Domain.Entities
         public virtual DbSet<SummaryOfSalesByYear> SummaryOfSalesByYear { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<Territories> Territories { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -817,6 +818,19 @@ namespace Sum.Domain.Entities
                     .HasForeignKey(d => d.RegionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Territories_Region");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.Email).HasMaxLength(150);
+
+                entity.Property(e => e.FirstName).HasMaxLength(150);
+
+                entity.Property(e => e.LastName).HasMaxLength(150);
+
+                entity.Property(e => e.Password).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

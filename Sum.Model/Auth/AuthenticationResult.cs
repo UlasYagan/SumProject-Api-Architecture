@@ -7,9 +7,9 @@ namespace Sum.Model.Auth
         public Guid Id { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
+        public string ReadableMessage { get; set; } 
         public string Role { get; set; }
         public bool Success { get; set; }
-        public string ReadableMessage { get; set; }
-        public int UserTypeId { get; set; }
+        public string Token { get; set; }   
     }
 }

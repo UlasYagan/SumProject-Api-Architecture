@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using Sum.Domain.Entities;
 using Sum.Service.Base;
 using Sum.Service.Features;
@@ -16,6 +17,8 @@ namespace Sum.Service.ServiceExtension
             services.AddTransient<IBaseCrudService<Products, int>, ProductService>();
             services.AddTransient<IProductService, ProductService>();
 
+            services.AddTransient<IBaseCrudService<Users, Guid>, UserService>();
+            services.AddTransient<IUserService, UserService>();
 
 
         }
