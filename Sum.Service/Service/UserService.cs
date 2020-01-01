@@ -57,6 +57,29 @@ namespace Sum.Service.Service
             };
         }
 
+        public AuthenticationResult Login(LoginDto entity)
+        {
+            var user = _repository.Get(c => c.Email.Equals(entity.Email) && c.Password == Help.Hashing(entity.Password.Trim())).FirstOrDefault();
+
+            if (user == null)
+            {
+                return new AuthenticationResult
+                {
+                    ReadableMessage = "User/Password is wrong",
+                    Success = false
+                };
+            }
+            return new AuthenticationResult
+            {
+                Id = user.Id,
+                ReadableMessage = "The Process is success",
+                Email = user.Email,
+                Success = true,
+                FullName = $"{user.FirstName} {user.LastName}",
+                Token = GenerateToken(user)
+            };
+        }
+
         public string GenerateToken(Users user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -68,7 +91,9 @@ namespace Sum.Service.Service
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                    new Claim(JwtRegisteredClaimNames.Sid, user.Id.ToString()), 
                     new Claim("id",user.Id.ToString()), 
+                     
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

@@ -5,11 +5,15 @@ using Sum.Model.Dtos;
 using Sum.Model.Options;
 using Sum.Service.Interface;
 using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Sum.Api.ServiceExtension;
 
 namespace Sum.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProductController : ControllerBase
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(ProductController));
@@ -24,6 +28,7 @@ namespace Sum.Api.Controllers
         {
             try
             {
+                var xc = User.GetUserId();
                 return _productService.GetProductList(null, new DataPagingOptions(pageSize, pageNumber));
             }   
             catch (Exception ex)

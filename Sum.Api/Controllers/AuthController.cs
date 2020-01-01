@@ -33,5 +33,19 @@ namespace Sum.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost(nameof(Login))]
+        public ActionResult<AuthenticationResult> Login([FromBody] LoginDto request)
+        {
+            try
+            {
+                return Ok(_userService.Login(request));
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"UserController Login method - {ex.Message}", ex);
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

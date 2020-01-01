@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +22,6 @@ namespace Sum.Api.ServiceExtension
             services.Configure<ApplicationSettings>(configuration.GetSection(nameof(ApplicationSettings)));
             services.Configure<EmailSettings>(configuration.GetSection(nameof(EmailSettings)));
             services.Configure<FileUpload>(configuration.GetSection(nameof(FileUpload)));
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSwaggerGen(option =>
             {
