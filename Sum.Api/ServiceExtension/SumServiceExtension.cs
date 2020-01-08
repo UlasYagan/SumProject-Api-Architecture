@@ -34,7 +34,7 @@ namespace Sum.Api.ServiceExtension
                         {
                             Reference = new OpenApiReference {
                                 Type = ReferenceType.SecurityScheme,
-                                Id = "sumAuth" }
+                                Id = "oauth2" }
                         }, new List<string>()
                     }
                 };
@@ -45,9 +45,14 @@ namespace Sum.Api.ServiceExtension
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
-                    Scheme = "sumAuth"
+                    Scheme = "oauth2"
                 });
                 option.AddSecurityRequirement(security);
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials().Build());
             });
 
             //services.Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)));

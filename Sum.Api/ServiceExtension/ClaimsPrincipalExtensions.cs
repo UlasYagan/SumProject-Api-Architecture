@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
 
 namespace Sum.Api.ServiceExtension
 {
@@ -12,7 +10,7 @@ namespace Sum.Api.ServiceExtension
             if (principal == null)
                 throw new ArgumentNullException(nameof(principal));
 
-            var claim = principal.FindFirst(ClaimTypes.Sid);
+            var claim = principal.FindFirst("id");
             return claim?.Value;
         }
 
@@ -21,7 +19,7 @@ namespace Sum.Api.ServiceExtension
             if (principal == null)
                 throw new ArgumentNullException(nameof(principal));
 
-            var claim = principal.FindFirst(ClaimTypes.Name);
+            var claim = principal.FindFirst(ClaimTypes.NameIdentifier);
             return claim?.Value;
         }
 
@@ -34,13 +32,5 @@ namespace Sum.Api.ServiceExtension
             return claim?.Value;
         }
 
-        public static string GetUserRole(this ClaimsPrincipal principal)
-        {
-            if (principal == null)
-                throw new ArgumentNullException(nameof(principal));
-
-            var claim = principal.FindFirst(ClaimTypes.Role);
-            return claim?.Value;
-        }
     }
 }
