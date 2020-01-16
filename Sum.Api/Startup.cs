@@ -26,7 +26,7 @@ namespace Sum.Api
             services.AddControllers();
             services.AddInjectionForSumObject(Configuration);
             services.AddInjectionForSumRepositories();
-            services.AddInjectionForSumServices();
+            services.AddInjectionForSumServices(Configuration);
 
         }
 
