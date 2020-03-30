@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Repository", "Sum.Repos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum.Service", "Sum.Service\Sum.Service.csproj", "{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum.Core", "Sum.Core\Sum.Core.csproj", "{A47EC9C1-DE1E-44BD-BEE4-F1DFA6264124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADE1078-DBB9-4010-A63A-48C2A26F4E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47EC9C1-DE1E-44BD-BEE4-F1DFA6264124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47EC9C1-DE1E-44BD-BEE4-F1DFA6264124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47EC9C1-DE1E-44BD-BEE4-F1DFA6264124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47EC9C1-DE1E-44BD-BEE4-F1DFA6264124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

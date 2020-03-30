@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Sum.Api.ServiceExtension;
+using Sum.Core.HealthCheck;
 using Sum.Model.Options;
 using Sum.Repository.ServiceExtension;
 using Sum.Service.ServiceExtension;
@@ -27,6 +27,11 @@ namespace Sum.Api
             services.AddInjectionForSumObject(Configuration);
             services.AddInjectionForSumRepositories();
             services.AddInjectionForSumServices(Configuration);
+
+            services.AddHealthChecks()
+                .AddCheck("DB Health Check", () => DbHealthCheckProvider.Check(""))
+                .AddCheck("Mq Health Check", ()=> MqHealthCheckProvider.Check(""))
+                .AddCheck<SendgridHealthCheckProvider>("Sendgrid Health Check");
 
         }
 
@@ -60,6 +65,7 @@ namespace Sum.Api
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHealthChecks("api/health");
                 endpoints.MapControllers();
             });
         }
